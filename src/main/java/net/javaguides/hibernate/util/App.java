@@ -13,13 +13,17 @@ public class App {
 		//test save student
 		Student student = new Student("Nisar","Ahmed","nisar@abc.com");
 		studentdao.SaveStudent(student);
-	/*	
+		Student student22 = new Student("Alan","Walker","alan@abc.com");
+		studentdao.SaveStudent(student22);
+	
 		//test update student
-		student.setFirstName("Nizar");
+		student.setFirstName("Nesar");
+		student.setLastName("Ahmad");
 		studentdao.UpdateStudent(student);
 		
 		//test get student by id
 		Student student2 = studentdao.getStudentById(student.getId());
+		System.out.println("First Student Name:" + student2.getFirstName());
 
 		//test get all students
 		List<Student> students = studentdao.getAllStudent();
@@ -28,6 +32,6 @@ public class App {
 		
 		//test delete student
 		
-		studentdao.DeleteStudent(student.getId());*/
+		studentdao.DeleteStudent(student.getId());
 	}
 }

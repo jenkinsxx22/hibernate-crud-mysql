@@ -2,10 +2,11 @@ package net.javaguides.hibernate.dao;
 
 import java.util.List;
 
-import javax.transaction.Transaction;
+
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import net.javaguides.hibernate.model.Student;
@@ -18,10 +19,11 @@ public class StudentDao implements IStudentDao {
 		
 		Transaction transaction = null;
 		
-	//	SessionFactory sf = new Configuration().configure().buildSessionFactory();
-	//	Session s = sf.openSession();
+		/*not worked
+		//SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		//Session s = sf.openSession();
 		
-		///try {
+		//try {*/
 		
 		try(Session s = HIbernateUtil.getSessionFactory().openSession()){
 			//start the transaction
@@ -46,9 +48,7 @@ public class StudentDao implements IStudentDao {
 	public void UpdateStudent(Student student) throws Exception {
 		
 		Transaction transaction = null;
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
-		Session s = sf.openSession();
-try {
+		try(Session s = HIbernateUtil.getSessionFactory().openSession()) {
 		//start the transaction
 			transaction=(Transaction) s.beginTransaction();		
 			
@@ -72,9 +72,7 @@ try {
 		
 		Transaction transaction = null;
 		Student student = null;
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
-		Session s = sf.openSession();
-		try {	
+		try(Session s = HIbernateUtil.getSessionFactory().openSession()){
 		//start the transaction
 			transaction=(Transaction) s.beginTransaction();		
 			
@@ -103,14 +101,12 @@ try {
 		
 		Transaction transaction = null;
 		List<Student> students = null;
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
-		Session s = sf.openSession();
-		try {
+		try(Session s = HIbernateUtil.getSessionFactory().openSession()) {
 		//start the transaction
 			transaction=(Transaction) s.beginTransaction();		
 			
 			//get students object
-			students = s.createQuery("from Student").list();
+			students = s.createQuery("from student").list();
 			  
 			//commit the transaction
 			transaction.commit();
@@ -132,9 +128,7 @@ try {
 		
 		Transaction transaction = null;
 		Student student = null;
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
-		Session s = sf.openSession();
-		try {
+		try(Session s = HIbernateUtil.getSessionFactory().openSession()){
 		//start the transaction
 			transaction=(Transaction) s.beginTransaction();		
 			

@@ -6,9 +6,21 @@
 		<table>
 		<tr>
 		<td>Enter RollNo:</td>
-		<td><input type="text" name="rollno"></td>
+		<td><input type="text" name="txt_id"></td>
 		</tr>
-		<tr><td><input type="submit" value="Get Record"></td></tr>
+		<tr>
+		<td>Enter First Name:</td>
+		<td><input type="text" name="txt_firstname"></td>
+		</tr>
+		<tr>
+		<td>Enter Last Name:</td>
+		<td><input type="text" name="txt_lastname"></td>
+		</tr>
+		<tr>
+		<td>Enter Email:</td>
+		<td><input type="text" name="txt_Email"></td>
+		</tr>
+		<tr><td><input type="submit" value="Save Record"></td></tr>
 		</table>
 		</form>
 
